@@ -1,0 +1,55 @@
+<odoo>
+    <template id="custom_bizland_header" inherit_id="portal.frontend_layout" name="custom bizland header">
+        <xpath expr="//header" position="before">
+            <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+                <div class="container d-flex">
+                    <div class="contact-info mr-auto">
+                        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
+                        <i class="icofont-phone"></i> +1 5589 55488 55
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+                        <a href="#" class="skype"><i class="icofont-skype"></i></a>
+                        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <!--<xpath expr="//header[hasclass('header-scrolled')]" position="replace">
+        </xpath>-->
+        <xpath expr="//header" position="attributes">
+            <attribute name="id">header</attribute>
+            <attribute name="t-attf-class" add="fixed-top bizland_header" separator=" "/>
+        </xpath>
+        <xpath expr="//header/nav" position="attributes">
+            <attribute name="class">navbar navbar-expand-md</attribute>
+        </xpath>
+        <xpath expr="//ul[@id='top_menu']" position="attributes">
+            <attribute name="class"></attribute>
+        </xpath>
+        <!--<xpath expr="//ul[@id='top_menu']/li[1]" position="attributes">
+            <attribute name="class">nav-item active</attribute>
+        </xpath>-->
+        <xpath expr="//ul[@id='top_menu']/li[hasclass('divider')]" position="replace">
+        </xpath>
+        <xpath expr="//ul[@id='top_menu']/li[hasclass('dropdown')]" position="replace">
+        </xpath>
+        <xpath expr="//div[@id='top_menu_collapse']" position="attributes">
+            <attribute name="class">nav-menu d-none d-lg-block</attribute>
+        </xpath>
+    </template>
+    <!--<template id="lad_home" inherit_id="portal.frontend_layout" name="Home">
+        <xpath expr="//t[1]" position="inside">
+            <script>
+                $('#top_menu').on('click', 'li', function() {
+                    alert("test");
+                    $('#top_menu li.active').removeClass('active');
+                    $(this).addClass('active');
+                });
+                AOS.init();
+            </script>
+        </xpath>
+    </template>-->
+</odoo>
